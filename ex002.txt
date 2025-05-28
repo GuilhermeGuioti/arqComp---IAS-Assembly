@@ -1,0 +1,30 @@
+.org 0x000
+    LOAD M(posicao_termo)
+    SUB M(um)
+    STOR M(aux2)
+    
+    LOAD MQ,M(razao)
+    MUL M(aux2)
+    LOAD MQ
+    STOR M(aux3)
+
+    LOAD M(primeiro_termo)
+    ADD M(aux3)
+    STOR M(resultado)
+
+.org 0x040
+primeiro_termo:
+    .word 0x5
+posicao_termo:
+    .word 0x4
+razao:
+    .word 0x3
+um:
+    .word 0x1
+aux2:
+    .word 0x0
+aux3:
+    .word 0x0
+
+.org 0x0F0
+resultado:         .word 0x0

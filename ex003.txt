@@ -1,0 +1,24 @@
+.org 0x000
+    LOAD M(primeiro_termo)
+    ADD M(ultimo_termo)
+    STOR M(aux1)
+
+    LOAD MQ, M(numero_termos)
+    MUL M(aux1)
+
+    LOAD MQ
+    DIV M(aux)
+    LOAD MQ
+
+    STOR M(resultado)
+
+
+.org 0x040
+primeiro_termo:   .word 0x2
+ultimo_termo:     .word 0xE
+numero_termos:    .word 0x5
+aux:              .word 0x2
+aux1:             .word 0x0
+
+.org 0x0E0
+resultado:        .word 0x0
